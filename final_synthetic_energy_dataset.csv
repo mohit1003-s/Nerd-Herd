@@ -1,0 +1,11 @@
+State,Rural_Supply_Hours,Urban_Supply_Hours,Electrification_%,Renewable_Share_%,CO2_Intensity_kg/kWh,Energy_Awareness_Index,Income_Level_Rs/Month,Access_Gap_Hours
+Kerala,23.4,23.6,100.0,47.8,0.73,0.36,40658,0.2
+Tamil Nadu,23.0,23.0,100.0,38.6,0.93,0.77,33942,0.0
+Gujarat,23.2,23.6,99.5,41.5,0.86,0.71,33431,0.4
+Maharashtra,20.9,23.0,98.6,29.4,0.81,0.44,17747,2.1
+Punjab,22.6,23.5,100.0,26.2,0.65,0.43,15189,0.9
+Haryana,16.8,21.4,97.8,24.0,0.65,0.43,34118,4.6
+Uttar Pradesh,16.2,19.9,95.5,22.1,0.62,0.48,16899,3.7
+Bihar,17.6,20.3,96.2,18.4,0.9,0.58,16267,2.7
+Jharkhand,16.2,19.0,95.1,20.3,0.81,0.54,46551,2.8
+Odisha,19.9,22.6,97.0,28.9,0.85,0.48,26394,2.7
