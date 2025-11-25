@@ -140,5 +140,3 @@ except FileNotFoundError:
     st.info("Research paper PDF not found in repo root (Conference mohit[1].pdf). Upload it to enable download.")
 
 st.write("All analysis shown here is directly based on the research paper and the dataset provided.")
-
-    
