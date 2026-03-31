@@ -1,0 +1,61 @@
+{% block content %}
+
+<div class="container">
+
+    <h2 class="page-title">Errands Marketplace</h2>
+
+    <div class="form-box">
+        <form method="POST">
+            <input type="text" name="task" placeholder="Task">
+            <input type="text" name="location" placeholder="Location">
+            <input type="text" name="contact" placeholder="Contact">
+            <button type="submit">Post Errand</button>
+        </form>
+    </div>
+
+    <h3 class="page-title">Available Errands</h3>
+
+    <div class="list-box">
+        {% for errand in errands %}
+            <p>
+                <strong>{{ errand[1] }}</strong><br>
+                Location: {{ errand[2] }}<br>
+                Contact: {{ errand[3] }}
+            </p>
+            <hr>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}{% block content %}
+
+<div class="container">
+
+    <h2 class="page-title">Errands Marketplace</h2>
+
+    <div class="form-box">
+        <form method="POST">
+            <input type="text" name="task" placeholder="Task">
+            <input type="text" name="location" placeholder="Location">
+            <input type="text" name="contact" placeholder="Contact">
+            <button type="submit">Post Errand</button>
+        </form>
+    </div>
+
+    <h3 class="page-title">Available Errands</h3>
+
+    <div class="list-box">
+        {% for errand in errands %}
+            <p>
+                <strong>{{ errand[1] }}</strong><br>
+                Location: {{ errand[2] }}<br>
+                Contact: {{ errand[3] }}
+            </p>
+            <hr>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Welcome to CampusHub</h1>
+    <p>Exchange notes, find tutors, and get things done on campus.</p>
+
+    <a href="/notes"><button class="btn">Get Started</button></a>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📄Notes</h3>
+            <p>Upload & download study material</p>
+            <a href="/notes"><button class="btn">Open</button></a>
+        </div>
+
+        <div class="card">
+            <h3>📚Tutoring</h3>
+            <p>Find or offer tutoring help</p>
+            <a href="/tutoring"><button class="btn">Open</button></a>
+        </div>
+
+        <div class="card">
+            <h3>🛵Errands</h3>
+            <p>Post and complete small tasks</p>
+            <a href="/errands"><button class="btn">Open</button></a>
+        </div>
+
+        <div class="card">
+            <h3>💻Freelance</h3>
+            <p>Offer your skills to others</p>
+            <a href="/freelance"><button class="btn">Open</button></a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

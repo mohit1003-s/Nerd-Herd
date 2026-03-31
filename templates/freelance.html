@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tutoring</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Find a Tutor</h2>
+
+<form method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="text" name="subject" placeholder="Subject" required>
+
+<input 
+  type="text" 
+  name="contact" 
+  placeholder="Phone / WhatsApp"
+  pattern="[0-9]{10}"
+  title="Enter 10 digit number"
+  required>
+<button type="submit">Post</button>
+
+</form>
+
+<h3>Available Tutors</h3>
+
+<ul>
+{% for tutor in tutors %}
+<li>
+{{ tutor[1] }} | {{ tutor[2] }} | {{ tutor[3] }}
+</li>
+{% endfor %}
+</ul>
+
+</div>
+
+</body>
+</html>

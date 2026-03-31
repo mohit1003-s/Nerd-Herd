@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    
+
+    <h2>Find or Offer Tutoring</h2>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="error-box">
+      {% for msg in messages %}
+        <p>{{ msg }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+    <form method="POST" class="form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <input type="text" name="contact" placeholder="Phone / WhatsApp" required>
+        <button class="btn">Post Tutor</button>
+    </form>
+
+    <h3>Available Tutors</h3>
+
+    <div class="cards">
+        {% for tutor in tutors %}
+        <div class="card">
+
+            <h3>{{ tutor[1] }}</h3>
+            <p>Subject: {{ tutor[2] }}</p>
+            <p>Contact: {{ tutor[3] }}</p>
+
+            <div class="btn-group">
+                <a href="tel:{{ tutor[3] }}" class="btn">Call</a>
+
+                <a href="/delete_tutor/{{ tutor[0] }}"
+                   class="btn delete-btn"
+                   onclick="return confirm('Delete this tutor?')">
+                   Delete
+                </a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+</body>
+</html>
+

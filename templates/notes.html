@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Upload Notes</h1>
+
+    <div class="form-box">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="subject" placeholder="Subject" required>
+            <input type="text" name="semester" placeholder="Semester" required>
+            <input type="file" name="file" required>
+
+            <button class="btn">Upload</button>
+        </form>
+    </div>
+
+    <h2 style="margin-top:40px;">Available Notes</h2>
+
+    <div class="notes-list">
+    {% for note in notes %}
+        <div class="note-card">
+            <p><strong>{{ note[1] }}</strong></p>
+            <p>Semester: {{ note[2] }}</p>
+
+            <div class="btn-group">
+    <a href="/download/{{ note[3] }}" class="btn download-btn">Download</a>
+
+    <a href="/delete/{{ note[0] }}" 
+       class="btn delete-btn"
+       onclick="return confirm('Delete this note?')">
+       Delete
+    </a>
+</div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+</div>
+
+{% endblock %}
