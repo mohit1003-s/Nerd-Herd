@@ -20,7 +20,7 @@ body {
 }
 
 .nav-links a {
-    color: #dcdde1;
+    color: #22c55e;
     text-decoration: none;
     margin-left: 25px;
     font-size: 14px;
@@ -252,4 +252,186 @@ p {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 6px;
+}
+/* NAVBAR FIX */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f172a;
+    padding: 15px 40px;
+}
+
+.navbar h1 {
+    color: white;
+    font-size: 20px;
+}
+
+/* RIGHT SIDE LINKS */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.nav-links a:hover {
+    color: white;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    background: #22c55e;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #16a34a;
+}
+.main-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.left { width: 35%; }
+.right { width: 65%; }
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.job-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    color: green;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d1b2a;
+    padding: 15px 40px;
+    color: white;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.welcome {
+    margin-left: 20px;
+    color: #ccc;
+}
+
+.register-btn {
+    background: #28a745;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+.logout {
+    color: #ff4d4d;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d1b2a;
+    padding: 15px 40px;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* LINKS */
+.nav-right a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-right a:hover {
+    color: #ffffff;
+}
+
+/* USER */
+.welcome {
+    color: #9ecfff;
+    font-size: 14px;
+}
+
+/* BUTTONS */
+.register-btn {
+    background: #28a745;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: white;
+}
+
+.logout {
+    color: #ff6b6b;
+}
+
+/* CONTAINER FIX */
+.container {
+    padding: 30px;
 }
