@@ -1,44 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Tutoring</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block content %}
 
-<div class="container">
+<div class="main-container">
 
-<h2>Find a Tutor</h2>
+    <!-- LEFT: POST JOB -->
+    <div class="left">
+        <div class="card">
+            <h2>Post a Freelance Job</h2>
 
-<form method="POST">
+            <form method="POST" action="/freelance">
+                <input type="text" name="title" placeholder="Job Title" required>
 
-<input type="text" name="name" placeholder="Your Name" required>
+                <textarea name="description" placeholder="Describe the work..." required></textarea>
 
-<input type="text" name="subject" placeholder="Subject" required>
+                <input type="number" name="price" placeholder="Budget (₹)" required>
 
-<input 
-  type="text" 
-  name="contact" 
-  placeholder="Phone / WhatsApp"
-  pattern="[0-9]{10}"
-  title="Enter 10 digit number"
-  required>
-<button type="submit">Post</button>
+                <input type="tel" name="contact" placeholder="Phone" required>
 
-</form>
+                <button type="submit">Post Job</button>
+            </form>
+        </div>
+    </div>
 
-<h3>Available Tutors</h3>
+    <!-- RIGHT: JOBS -->
+    <div class="right">
+        <h2>Available Jobs</h2>
 
-<ul>
-{% for tutor in tutors %}
-<li>
-{{ tutor[1] }} | {{ tutor[2] }} | {{ tutor[3] }}
-</li>
-{% endfor %}
-</ul>
+        {% for job in jobs %}
+        <div class="job-card">
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.description }}</p>
+            <p class="price">₹ {{ job.price }}</p>
+
+            <p class="contact">📞 {{ job.contact }}</p>
+
+            <a href="https://wa.me/{{ job.contact }}" target="_blank" class="whatsapp">WhatsApp</a>
+
+            {% if session.get("user") == job.owner %}
+            <form method="POST" action="/delete_freelance/{{ job.id }}">
+                <button class="delete-btn">Delete</button>
+            </form>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
 
 </div>
 
-</body>
-</html>
+{% endblock %}
