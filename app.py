@@ -168,6 +168,11 @@ def delete_note(id):
 @app.route("/download/<filename>")
 def download_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
+
+@app.route("/services")
+def services():
+   return render_template("services.html") 
+
     
 
 
