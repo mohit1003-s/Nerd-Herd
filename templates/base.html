@@ -1,31 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusHub</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+    <style>
+        /* NAVBAR */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1c2331;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links a, .navbar .nav-links span {
+            color: #fff;
+            margin-left: 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar .nav-links .welcome {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .navbar .nav-links .logout {
+            background-color: #e74c3c;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: #fff !important;
+        }
+
+        .navbar .nav-links .logout:hover {
+            background-color: #c0392b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* SERVICE CARDS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .service-card .btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .service-card .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive fixes */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .nav-links {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
 <body>
 
-<div class="navbar">
-    <h2>CampusHub</h2>
-    <div>
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">CampusHub</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/services">Services</a>
+            <a href="/notes">Notes</a>
+            <a href="/tutoring">Tutoring</a>
+            <a href="/errands">Errands</a>
+            <a href="/freelance">Freelance</a>
 
-        {% if session.get("user") %}
-            <span>Welcome {{ session["user"] }}</span>
-            <a href="/logout">Logout</a>
-        {% else %}
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-        {% endif %}
+            {% if session.get("user") %}
+                <span class="welcome">👋 {{ session["user"] }}</span>
+                <a href="/logout" class="logout">Logout</a>
+            {% else %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        {% block content %}{% endblock %}
     </div>
-</div>
-
-<div class="container">
-    {% block content %}{% endblock %}
-</div>
 
 </body>
 </html>
